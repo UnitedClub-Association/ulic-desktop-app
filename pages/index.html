@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULIC - Home</title>
+    
+    <!-- App Stylesheets -->
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/homepage.css">
+    
+    <link rel="icon" href="../assets/images/ulic-favicon.ico" type="image/x-icon">
+
+    <!-- Icon Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Theme Engine Scripts -->
+    <script src="../js/themes.js"></script>
+    <script src="../js/theme-engine.js"></script>
+</head>
+<body>
+    <!-- Animated Background Shapes -->
+    <div class="background-shapes">
+        <div class="shape shape1"></div><div class="shape shape2"></div><div class="shape shape3"></div>
+    </div>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to ULIC!</h1>
+                <p>Join the University Laboratory ICT Club and dive into the world of tech with coding, projects, and events!</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="live-events">
+            <div class="section-header">
+                <h2>Live & Upcoming Events</h2>
+                <a href="events.html" class="view-all-btn">View All</a>
+            </div>
+            <div class="card-grid" id="events-grid">
+                <!-- Event cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section class="content-section" id="featured-projects">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <a href="projects.html" class="view-all-btn">View All</a>
+            </div>
+            <div class="primary-feature">
+                <div class="card featured">
+                    <img src="../assets/images/ulic-favicon.jpg" alt="Featured Project" class="card-image">
+                    <div class="card-content">
+                        <h3>ULIC Club Website</h3>
+                        <p>The official website for the club, built collaboratively by our members using modern web technologies.</p>
+                    </div>
+                </div>
+            </div>
+            <h3 class="subsection-title">More Projects</h3>
+            <div class="card-grid" id="projects-grid">
+                <!-- Project cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- App Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/event-manager.js"></script>
+    <script src="../js/project-manager.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../customization/customization-js/themes.js"></script> 
+    <script src="../customization/customization-js/theme-engine.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

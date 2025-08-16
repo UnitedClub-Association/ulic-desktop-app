@@ -1,0 +1,213 @@
+/* css/homepage.css - PAGE-SPECIFIC & SELF-CONTAINED */
+
+/* --- THEME & FONT DEFINITIONS (Duplicated for Independence) --- */
+:root {
+    /* Default Theme: Tokyo Night */
+    --bg-color: #1a1b26;
+    --bg-secondary: #16161e;
+    --card-bg: rgba(22, 22, 30, 0.7);
+    --border-color: rgba(72, 73, 89, 0.5);
+    --text-color: #a9b1d6;
+    --text-muted: #565f89;
+    --primary-glow: #7aa2f7;
+    --secondary-glow: #bb9af7;
+
+    /* Font Definitions */
+    --font-primary: 'Azonix', sans-serif;
+    --font-secondary: 'Molgan', sans-serif;
+    --font-body: 'Xeroda', sans-serif;
+}
+
+/* --- BASE PAGE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-body);
+    color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- Animated Background Shapes --- */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    border: 1px solid var(--border-color);
+    background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+    animation: spin linear infinite;
+    opacity: 0.5;
+}
+
+.shape1 { width: 30vw; height: 30vw; top: -10vh; left: -15vw; animation-duration: 40s; }
+.shape2 { width: 20vw; height: 20vw; bottom: -5vh; right: -10vw; border-radius: 30%; animation-duration: 30s; animation-direction: reverse; }
+.shape3 { width: 10vw; height: 10vw; top: 10vh; right: 20vw; animation-duration: 20s; }
+
+
+/* --- Main Content Layout --- */
+.main-content {
+    width: 90%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    min-height: 30vh;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    margin-bottom: 3rem;
+}
+
+.hero-content h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: var(--text-color);
+    text-shadow: 0 0 15px var(--primary-glow);
+    margin: 0;
+}
+
+.hero-content p {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: var(--text-muted);
+    margin-top: 1rem;
+    max-width: 600px;
+}
+
+/* --- SECTION & HEADER STYLES --- */
+.content-section {
+    margin-bottom: 3.5rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: var(--text-color);
+    text-shadow: 0 0 10px var(--secondary-glow);
+    margin: 0;
+}
+
+.view-all-btn {
+    background-color: transparent;
+    color: var(--primary-glow);
+    border: 2px solid var(--primary-glow);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.view-all-btn:hover {
+    background-color: var(--primary-glow);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* --- HOMEPAGE CARD STYLES (Glassmorphism) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-glow);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    font-family: var(--font-secondary);
+    color: var(--text-color);
+    margin: 0 0 0.8rem;
+    font-size: 1.5rem;
+}
+
+.card-content p {
+    font-family: var(--font-body);
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.subsection-title {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin: 3rem 0 1.5rem;
+    text-align: center;
+}
+
+.primary-feature .card.featured {
+    border-color: var(--secondary-glow);
+    box-shadow: 0 0 25px var(--secondary-glow);
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULIC Events</title>
+    <!-- Link to the new theme stylesheet -->
+    <link rel="stylesheet" href="../css/events-theme.css">
+    <!-- Keep navbar styles separate for modularity -->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <!-- Custom cursor styles -->
+     <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="icon" href="../assets/images/ulic-favicon.ico" type="image/x-icon">
+</head>
+<body class="dark-theme">
+    <div id="navbar-placeholder"></div>
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Events</h1>
+            <p>Stay updated with the latest happenings in the ULIC community.</p>
+        </header>
+
+        <section class="content-section" id="live-events-section">
+            <div class="section-header">
+                <h2>Live Events</h2>
+                <a href="live-events.html" class="view-all-btn" style="display: none;">View all live events</a>
+            </div>
+            <div class="card-grid" id="live-events-grid"></div>
+        </section>
+
+        <section class="content-section" id="upcoming-events-section">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <a href="upcoming-events.html" class="view-all-btn" style="display: none;">View all upcoming events</a>
+            </div>
+            <div class="card-grid" id="upcoming-events-grid"></div>
+        </section>
+
+        <section class="content-section" id="featured-events-section">
+            <div class="section-header">
+                <h2>Featured Events</h2>
+                <a href="all-events.html" class="view-all-btn" style="display: none;">View all events</a>
+            </div>
+            <div class="card-grid" id="featured-events-grid"></div>
+        </section>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/event-manager.js"></script>
+    <script src="../js/main-events.js"></script> 
+</body>
+</html>

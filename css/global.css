@@ -1,0 +1,80 @@
+/* ---
+--- ULIC Global Styles - Neon Tech Theme
+--- This file contains all universal styles, fonts, and theme variables.
+--- Link this file FIRST in all your HTML pages.
+--- */
+
+/* --- FONT IMPORTS & DEFINITIONS --- */
+@import url('https://fonts.cdnfonts.com/css/molgan');
+@import url('https://fonts.cdnfonts.com/css/xeroda');
+@import url('https://fonts.cdnfonts.com/css/azonix');
+@import url('https://fonts.cdnfonts.com/css/a-astro-space');
+
+/* --- UNIVERSAL THEME & FONT STYLES --- */
+:root {
+    --font-title: 'Blanka', sans-serif;
+    --font-body: 'Iceberg', cursive;
+
+    /* Light Theme Colors */
+    --c-light-primary: #7952b3;
+    --c-light-secondary: #ffc107;
+    --c-light-background: #f4f3f8;
+    --c-light-surface: #ffffff;
+    --c-light-text-primary: #212529;
+    --c-light-text-secondary: #6c757d;
+
+    /* Dark Theme (Neon) Colors */
+    --c-dark-primary: #8A2BE2; /* Brighter Purple */
+    --c-dark-secondary: #ffbd59; /* Neon Orange/Yellow */
+    --c-dark-background: #120d1a; /* Very Dark Purple */
+    --c-dark-surface: #231934; /* Dark Surface Purple */
+    --c-dark-text-primary: #f0f0f8;
+    --c-dark-text-secondary: #a9a2b9;
+
+    /* Glow Effects */
+    --glow-primary: 0 0 7px var(--c-primary), 0 0 12px var(--c-primary);
+    --glow-secondary: 0 0 8px var(--c-secondary), 0 0 16px var(--c-secondary);
+}
+
+/* --- THEME SELECTORS --- */
+body.light-theme {
+    --c-primary: var(--c-light-primary);
+    --c-secondary: var(--c-light-secondary);
+    --c-background: var(--c-light-background);
+    --c-surface: var(--c-light-surface);
+    --c-text-primary: var(--c-light-text-primary);
+    --c-text-secondary: var(--c-light-text-secondary);
+}
+
+body.dark-theme {
+    --c-primary: var(--c-dark-primary);
+    --c-secondary: var(--c-dark-secondary);
+    --c-background: var(--c-dark-background);
+    --c-surface: var(--c-dark-surface);
+    --c-text-primary: var(--c-dark-text-primary);
+    --c-text-secondary: var(--c-dark-text-secondary);
+}
+
+/* --- BASIC BODY & LAYOUT STYLES --- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--c-background);
+    color: var(--c-text-primary);
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main-content {
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* --- DYNAMIC BODY PADDING FOR NAVBAR --- */
+body { transition: padding 0.3s ease; }
+body.body-padding-left { padding-left: 260px; }
+body.body-padding-left.minimized { padding-left: 80px; }
+body.body-padding-right { padding-right: 260px; }
+body.body-padding-right.minimized { padding-right: 80px; }
+body.body-padding-top { padding-top: 70px; }
+body.body-padding-bottom { padding-bottom: 70px; }

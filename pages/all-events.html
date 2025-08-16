@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULIC - All Events</title>
+    <!-- Link to the new theme stylesheet -->
+    <link rel="stylesheet" href="../css/events-theme.css">
+    <!-- Keep navbar styles separate for modularity -->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <!-- Custom cursor styles -->
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="icon" href="../assets/images/ulic-favicon.ico" type="image/x-icon">
+</head>
+<body class="dark-theme">
+    <div id="navbar-placeholder"></div>
+    <main class="main-content">
+        <a href="events.html" class="back-button">&larr; Back to Events Overview</a>
+        <header class="page-header">
+            <h1>All Events</h1>
+            <p>Browse and filter all community events and sessions.</p>
+        </header>
+
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="type-filter">Type</label>
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                    <option value="event">Event</option>
+                    <option value="session">Session</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="month-filter">Month</label>
+                <select id="month-filter"></select>
+            </div>
+            <div class="filter-group">
+                <label for="year-filter">Year</label>
+                <select id="year-filter"></select>
+            </div>
+        </div>
+
+        <div class="card-grid" id="events-grid"></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/event-manager.js"></script>
+    <script src="../js/all-events-page.js"></script>
+</body>
+</html>

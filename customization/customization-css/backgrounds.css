@@ -1,0 +1,251 @@
+/* ==========================================================================
+   BACKGROUNDS.CSS (v2.0)
+   This file contains all CSS classes and keyframe animations for the
+   dynamic backgrounds. Link this stylesheet in the <head> of any page
+   where you want the animated backgrounds to appear.
+   ========================================================================== */
+
+/* --- General Keyframes --- */
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes synthwave-gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes rise { from { transform: translateY(100vh) scale(0); opacity: 0; } to { transform: translateY(-10vh) scale(1); opacity: 1; } }
+@keyframes fall { from { transform: translateY(-10vh) rotate(0deg); opacity: 1; } to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+@keyframes pan { from { background-position: 0% 0%; } to { background-position: 100% 0%; } }
+@keyframes geo-spin { 0% { transform: rotate(0deg) scale(1); opacity: 0.1; } 50% { transform: rotate(180deg) scale(1.2); opacity: 0.5; } 100% { transform: rotate(360deg) scale(1); opacity: 0.1; } }
+@keyframes slide-stripes { from { background-position: 0 0; } to { background-position: 200px 0; } }
+@keyframes pan-grid { from { background-position: 0 0; } to { background-position: 200px 0; } }
+@keyframes rain-fall { from { transform: translateY(-10vh); opacity: 1; } to { transform: translateY(110vh); opacity: 0; } }
+@keyframes subtle-pan { from { background-position: 0% 0%; } to { background-position: 25% 25%; } }
+@keyframes subtle-pulse { from { opacity: 0.6; } to { opacity: 1; } }
+
+
+/* ==========================================================================
+   STYLES BEGIN
+   ========================================================================== */
+
+/* --- Tokyo Shapes (Kept) --- */
+#dynamic-background-container .shape { position: absolute; border: 1px solid var(--border-color); background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0)); animation: spin linear infinite; opacity: 0.5; }
+.shape1 { width: 30vw; height: 30vw; top: -10vh; left: -15vw; animation-duration: 40s; border-radius: 20px;} .shape2 { width: 20vw; height: 10vw; bottom: -5vh; right: -10vw; animation-duration: 30s; animation-direction: reverse; } .shape3 { width: 10vw; height: 10vw; top: 10vh; right: 20vw; animation-duration: 20s; border-radius: 5px;} .shape4 { width: 5vw; height: 15vw; top: 50vh; left: 15vw; animation-duration: 15s; } .shape5 { width: 8vw; height: 8vw; top: 20vh; left: 45vw; animation-duration: 25s; animation-direction: reverse; border-radius: 50px;} .shape6 { width: 4vw; height: 8vw; bottom: 15vh; left: 25vw; animation-duration: 12s; } .shape7 { width: 15vw; height: 15vw; top: 60vh; right: 15vw; animation-duration: 35s; border-radius: 10px;} .shape8 { width: 25vw; height: 5vw; bottom: 20vh; left: -10vw; animation-duration: 22s; } .shape9 { width: 2vw; height: 2vw; top: 5vh; left: 30vw; animation-duration: 10s; border-radius: 2px;} .shape10 { width: 18vw; height: 12vw; top: 70vh; left: 40vw; animation-duration: 45s; animation-direction: reverse; } .shape11 { width: 6vw; height: 6vw; bottom: 5vh; right: 45vw; animation-duration: 18s; border-radius: 10px;} .shape12 { width: 10vw; height: 2vw; top: 35vh; right: 5vw; animation-duration: 28s; }
+
+/* --- Geometric Dance (Kept) --- */
+.geo { position: absolute; border: 2px solid var(--secondary-glow); animation: geo-spin ease-in-out infinite; }
+.g1 { width: 100px; height: 100px; top: 10%; left: 10%; animation-duration: 8s; } .g2 { width: 150px; height: 150px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-duration: 12s; animation-direction: reverse; border-radius: 50%; } .g3 { width: 80px; height: 80px; top: 20%; right: 15%; animation-duration: 10s; } .g4 { width: 200px; height: 200px; bottom: 5%; left: 20%; animation-duration: 15s; border-radius: 10px; } .g5 { width: 50px; height: 50px; bottom: 15%; right: 10%; animation-duration: 7s; animation-direction: reverse; border-radius: 50%; }
+
+/* --- Minimal Lines (Kept) --- */
+.line { position: absolute; background: var(--border-color); animation: pan linear infinite; }
+.l1 { width: 1px; height: 100%; top: 0; left: 25%; animation-duration: 10s; } .l2 { width: 1px; height: 100%; top: 0; left: 75%; animation-duration: 15s; animation-direction: reverse; } .l3 { width: 100%; height: 1px; top: 25%; left: 0; animation-duration: 20s; } .l4 { width: 100%; height: 1px; top: 75%; left: 0; animation-duration: 12s; animation-direction: reverse; }
+
+/* --- Rain Fall (Kept) --- */
+.rain-drop { position: absolute; bottom: 100%; width: 2px; height: 50px; background: linear-gradient(to bottom, rgba(255,255,255,0), var(--primary-glow)); animation: rain-fall linear infinite; }
+.rain-drop:nth-child(1) { left: 10%; animation-duration: 0.8s; animation-delay: 0.1s; } .rain-drop:nth-child(2) { left: 25%; animation-duration: 0.6s; animation-delay: 0.3s; } .rain-drop:nth-child(3) { left: 40%; animation-duration: 0.9s; animation-delay: 0.2s; } .rain-drop:nth-child(4) { left: 55%; animation-duration: 0.7s; animation-delay: 0.5s; } .rain-drop:nth-child(5) { left: 70%; animation-duration: 0.85s; animation-delay: 0.4s; } .rain-drop:nth-child(6) { left: 85%; animation-duration: 0.65s; animation-delay: 0.1s; } .rain-drop:nth-child(7) { left: 5%; animation-duration: 0.75s; animation-delay: 0.6s; } .rain-drop:nth-child(8) { left: 95%; animation-duration: 0.95s; animation-delay: 0.3s; }
+
+/* --- [REDESIGNED] Synthwave Grid --- */
+@keyframes synth-pan { from { transform: translateZ(0px); } to { transform: translateZ(200px); } }
+#dynamic-background-container { perspective: 400px; }
+.synth-sun { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%); width: 200px; height: 200px; background: radial-gradient(circle, var(--primary-glow), transparent 70%); border-radius: 50%; box-shadow: 0 0 100px var(--primary-glow); }
+.synth-grid { position: absolute; top: 50%; left: 0; width: 100%; height: 200%; background: linear-gradient(var(--secondary-glow) 2px, transparent 2px), linear-gradient(90deg, var(--secondary-glow) 2px, transparent 2px); background-size: 50px 50px; transform-style: preserve-3d; transform: rotateX(80deg); animation: synth-pan 8s linear infinite; }
+
+/* --- [REDESIGNED] Aurora --- */
+@keyframes aurora-flow { 0% { background-position: 0% 0%; opacity: 0.4; } 50% { background-position: 100% 100%; opacity: 1; } 100% { background-position: 0% 0%; opacity: 0.4; } }
+.aurora { position: absolute; top: -50%; left: 0; width: 100%; height: 200%; background: linear-gradient(45deg, transparent, var(--primary-glow), transparent); opacity: 0; transform-origin: top center; filter: blur(50px); }
+.a1 { animation: aurora-flow 20s ease-in-out infinite; }
+.a2 { transform: rotate(10deg); animation: aurora-flow 25s ease-in-out infinite reverse; animation-delay: 3s; background: linear-gradient(-45deg, transparent, var(--secondary-glow), transparent); }
+.a3 { transform: rotate(-10deg); animation: aurora-flow 30s ease-in-out infinite; animation-delay: 5s; }
+
+/* --- [REDESIGNED] Molten Core (as Lava Lamp) --- */
+@keyframes move-blob { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-80vh) scale(1.2); } }
+.lava-lamp { position: absolute; inset: 0; filter: blur(25px) contrast(30); }
+.lava-blob { position: absolute; bottom: -20vh; left: calc(50% - 10vw); width: 20vw; height: 20vw; background: #cb2d3e; border-radius: 50%; animation: move-blob linear infinite; }
+.lava-blob:nth-child(1) { background: #ef473a; animation-duration: 15s; animation-delay: -2s; left: 10%; }
+.lava-blob:nth-child(2) { animation-duration: 12s; animation-delay: -5s; left: 30%; width: 25vw; height: 25vw; }
+.lava-blob:nth-child(3) { background: #f7971e; animation-duration: 18s; animation-delay: -10s; left: 50%; }
+.lava-blob:nth-child(4) { animation-duration: 14s; animation-delay: -8s; left: 70%; width: 18vw; height: 18vw; }
+.lava-blob:nth-child(5) { background: #ef473a; animation-duration: 16s; animation-delay: -3s; left: 90%; }
+
+/* --- [REDESIGNED] Floating Orbs --- */
+@keyframes float-orb { 0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; } 25% { opacity: 0.7; } 75% { opacity: 0.7; } 100% { transform: translateY(-100vh) translateX(var(--x-end)) scale(0.5); opacity: 0; } }
+.orb-container { position: absolute; inset: 0; }
+.orb { position: absolute; bottom: -100px; width: 50px; height: 50px; background: radial-gradient(circle, var(--primary-glow), transparent 60%); border-radius: 50%; animation: float-orb linear infinite; }
+.orb:nth-child(1) { left: 10%; animation-duration: 15s; --x-end: 20vw; }
+.orb:nth-child(2) { left: 20%; animation-duration: 20s; animation-delay: 3s; width: 30px; height: 30px; --x-end: -15vw; }
+.orb:nth-child(3) { left: 35%; animation-duration: 12s; animation-delay: 1s; width: 60px; height: 60px; --x-end: 10vw; }
+.orb:nth-child(4) { left: 50%; animation-duration: 18s; animation-delay: 5s; --x-end: -10vw; }
+.orb:nth-child(5) { left: 65%; animation-duration: 14s; animation-delay: 2s; width: 40px; height: 40px; --x-end: 15vw; }
+.orb:nth-child(6) { left: 80%; animation-duration: 22s; animation-delay: 7s; width: 25px; height: 25px; --x-end: -20vw; }
+.orb:nth-child(7) { left: 90%; animation-duration: 16s; animation-delay: 4s; width: 55px; height: 55px; --x-end: -5vw; }
+
+/* --- [REDESIGNED] Pulsing Hexagons --- */
+@keyframes pulse-hex { 0%, 100% { background: transparent; } 50% { background: var(--primary-glow); } }
+.hex-grid-container { display: grid; grid-template-columns: repeat(auto-fill, 100px); width: 120%; height: 120%; transform: translate(-10%, -10%); }
+.hex-grid-container::before { content: ""; width: 100px; height: 115.47px; background: var(--border-color); clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%); animation: pulse-hex 5s ease-in-out infinite; box-shadow: 100px 57.735px 0 var(--border-color); }
+/* This is a simplified CSS-only version. Many ::before elements would be needed for a full grid. A JS implementation would be better. */
+.hex-grid-container {
+  --s: 100px; --m: 2px; --c: var(--border-color);
+  --f: calc(1.732*var(--s) + 4*var(--m) - 1px);
+  --_g: var(--c) var(--m),#0000 0 calc(100% - var(--m)),var(--c) 0;
+  background:
+    linear-gradient(150deg,var(--_g)) calc(var(--f)/2),
+    linear-gradient(-150deg,var(--_g)) calc(var(--f)/2),
+    linear-gradient(30deg,var(--_g)) 0,
+    linear-gradient(-30deg,var(--_g)) 0,
+    linear-gradient(90deg,var(--c) var(--m),#0000 0);
+  background-size: var(--f) var(--s);
+  animation: pan-grid 30s linear infinite;
+}
+
+/* --- [REDESIGNED] Hyperspace --- */
+@keyframes hyperspace-fly { from { transform: translateZ(-200px); } to { transform: translateZ(200px); } }
+.hyperspace-container { position: absolute; inset: 0; transform-style: preserve-3d; animation: hyperspace-fly 2s linear infinite; }
+/* Many star elements would be generated by JS for a full effect. This is a sample. */
+.hyperspace-container::before { content: ""; position: absolute; inset: -500px; background: radial-gradient(2px 2px at 20px 30px, white, #0000), radial-gradient(2px 2px at 40px 70px, white, #0000), radial-gradient(2px 2px at 50px 160px, white, #0000), radial-gradient(3px 3px at 90px 40px, white, #0000), radial-gradient(3px 3px at 130px 80px, white, #0000), radial-gradient(2px 2px at 160px 120px, white, #0000); background-repeat: repeat; background-size: 200px 200px; transform: translateZ(-100px); }
+
+/* --- [REDESIGNED] Wavy Lines (SVG) --- */
+@keyframes wave-animate { to { transform: translateX(-100px); } }
+.wavy-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.wavy-path { fill: none; stroke: var(--primary-glow); stroke-width: 2; animation: wave-animate 2s linear infinite; }
+
+/* --- [REDESIGNED] Starfield --- */
+@keyframes move-stars { to { transform: translateY(-2000px); } }
+#stars1, #stars2, #stars3 { position: absolute; top: 0; left: 0; width: 100%; height: 2000px; background-repeat: repeat; animation: move-stars linear infinite; }
+#stars1 { background-image: radial-gradient(1px 1px at 20px 30px, white, #0000), radial-gradient(1px 1px at 40px 70px, white, #0000); background-size: 200px 200px; animation-duration: 50s; }
+#stars2 { background-image: radial-gradient(2px 2px at 50px 160px, white, #0000), radial-gradient(2px 2px at 90px 40px, white, #0000); background-size: 300px 300px; animation-duration: 100s; }
+#stars3 { background-image: radial-gradient(3px 3px at 130px 80px, white, #0000), radial-gradient(3px 3px at 160px 120px, white, #0000); background-size: 400px 400px; animation-duration: 150s; }
+
+/* --- [REDESIGNED] Bubbles --- */
+@keyframes bubble-rise { 0% { transform: translateY(0); } 100% { transform: translateY(-110vh); } }
+@keyframes bubble-wobble { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(20px); } }
+.bubble-wrapper > div { position: absolute; bottom: -100px; width: 50px; height: 50px; background: radial-gradient(circle at 30% 30%, white, transparent 40%); border: 2px solid var(--secondary-glow); border-radius: 50%; animation: bubble-rise linear infinite, bubble-wobble ease-in-out infinite alternate; opacity: 0.7; }
+/* Individual bubble styles would vary size, position, and duration */
+.bubble-wrapper div:nth-child(1) { left: 10%; animation-duration: 10s, 3s; }
+.bubble-wrapper div:nth-child(2) { left: 20%; width: 30px; height: 30px; animation-duration: 12s, 4s; animation-delay: 2s; }
+.bubble-wrapper div:nth-child(3) { left: 30%; width: 70px; height: 70px; animation-duration: 8s, 2s; animation-delay: 1s; }
+.bubble-wrapper div:nth-child(4) { left: 40%; animation-duration: 15s, 4s; }
+.bubble-wrapper div:nth-child(5) { left: 50%; width: 40px; height: 40px; animation-duration: 9s, 3s; animation-delay: 3s; }
+.bubble-wrapper div:nth-child(6) { left: 60%; width: 20px; height: 20px; animation-duration: 14s, 5s; }
+.bubble-wrapper div:nth-child(7) { left: 70%; width: 80px; height: 80px; animation-duration: 7s, 2s; animation-delay: 2s; }
+.bubble-wrapper div:nth-child(8) { left: 80%; width: 35px; height: 35px; animation-duration: 11s, 3s; }
+.bubble-wrapper div:nth-child(9) { left: 90%; animation-duration: 13s, 4s; animation-delay: 1s; }
+
+/* --- [REDESIGNED] Embers --- */
+@keyframes ember-float { to { transform: translateY(-110vh) translateX(var(--x-end)) rotate(720deg); opacity: 0; } }
+.ember-wrapper > div { position: absolute; bottom: -50px; width: 8px; height: 8px; background: var(--primary-glow); border-radius: 50%; box-shadow: 0 0 10px var(--primary-glow); animation: ember-float linear infinite; }
+/* Individual ember styles */
+.ember-wrapper div:nth-child(1) { left: 10%; animation-duration: 10s; --x-end: 50px; }
+.ember-wrapper div:nth-child(2) { left: 20%; width: 4px; height: 4px; animation-duration: 12s; animation-delay: 2s; --x-end: -30px; }
+.ember-wrapper div:nth-child(3) { left: 30%; width: 10px; height: 10px; animation-duration: 8s; animation-delay: 1s; --x-end: 20px; }
+.ember-wrapper div:nth-child(4) { left: 40%; animation-duration: 15s; --x-end: -60px; }
+.ember-wrapper div:nth-child(5) { left: 50%; width: 6px; height: 6px; animation-duration: 9s; animation-delay: 3s; --x-end: 40px; }
+
+/* --- [REDESIGNED] Snow --- */
+@keyframes snow-fall { to { transform: translateY(105vh); } }
+@keyframes snow-swing { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(20px); } }
+.snow-layer { position: absolute; inset: 0; background-repeat: repeat; animation: snow-fall linear infinite; }
+.snow-layer::before { content: ""; position: absolute; inset: 0; animation: snow-swing ease-in-out infinite alternate; }
+.layer1 { background-image: radial-gradient(4px 4px at 10% 30%, white, #0000), radial-gradient(4px 4px at 80% 60%, white, #0000); background-size: 200px 200px; animation-duration: 15s; } .layer1::before { animation-duration: 4s; }
+.layer2 { background-image: radial-gradient(6px 6px at 40% 20%, white, #0000), radial-gradient(6px 6px at 50% 80%, white, #0000); background-size: 300px 300px; animation-duration: 10s; } .layer2::before { animation-duration: 3s; }
+.layer3 { background-image: radial-gradient(8px 8px at 25% 50%, white, #0000), radial-gradient(8px 8px at 70% 90%, white, #0000); background-size: 400px 400px; animation-duration: 8s; } .layer3::before { animation-duration: 2s; }
+
+/* --- [REDESIGNED] Matrix --- */
+@keyframes matrix-scroll { to { transform: translateY(100%); } }
+.matrix-container { display: flex; justify-content: space-around; }
+.matrix-container::before { content: "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ10"; position: absolute; top: 0; left: 10%; writing-mode: vertical-rl; text-orientation: upright; color: var(--primary-glow); font-family: 'Courier New', monospace; text-shadow: 0 0 5px var(--primary-glow); animation: matrix-scroll 10s linear infinite; }
+/* Requires multiple ::before elements for a full effect, ideally JS generated */
+.matrix-container {
+    --char-list: "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+    background: repeating-linear-gradient(transparent 0 19px, var(--primary-glow) 20px 20px);
+    background-clip: text; -webkit-background-clip: text; color: transparent;
+    font-family: 'Courier New', monospace; font-size: 20px; text-align: justify;
+    animation: matrix-scroll 15s linear infinite;
+}
+.matrix-container::before { content: var(--char-list); display: block; }
+.matrix-container::after { content: var(--char-list); display: block; position: absolute; inset: 0; filter: blur(3px); opacity: 0.5; }
+
+/* --- [REDESIGNED] Circuitry --- */
+@keyframes pulse-line { to { stroke-dashoffset: 0; } }
+.circuit-container { background: radial-gradient(var(--border-color) 1px, transparent 1px) 0 0 / 20px 20px; }
+.circuit-container::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+        radial-gradient(circle at 10% 20%, var(--primary-glow) 5px, transparent 5px) no-repeat,
+        radial-gradient(circle at 80% 70%, var(--primary-glow) 5px, transparent 5px) no-repeat;
+}
+/* A true animated circuit requires SVG */
+.circuit-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.circuit-svg path {
+    stroke: var(--primary-glow); stroke-width: 2; fill: none;
+    stroke-dasharray: 1000; stroke-dashoffset: 1000;
+    animation: pulse-line 5s linear infinite;
+}
+
+/* --- [REDESIGNED] Glitch --- */
+@keyframes glitch-anim-1 { 0% { clip-path: inset(39% 0 40% 0); } 100% { clip-path: inset(52% 0 24% 0); } }
+@keyframes glitch-anim-2 { 0% { transform: translate(-3px, 2px); } 100% { transform: translate(3px, -2px); } }
+.glitch-img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 5rem; font-weight: bold; color: var(--text-color); }
+.glitch-img:nth-child(2) { color: #00ffff; animation: glitch-anim-1 2s infinite alternate-reverse, glitch-anim-2 0.1s infinite alternate; }
+.glitch-img:nth-child(3) { color: #ff00ff; animation: glitch-anim-1 1.5s infinite alternate, glitch-anim-2 0.1s infinite alternate-reverse; }
+.glitch-img::before { content: attr(data-text); position: absolute; left: 0; }
+
+/* --- [REDESIGNED] Confetti --- */
+@keyframes confetti-fall { 0% { transform: translateY(-10vh) rotateZ(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotateZ(720deg); opacity: 0; } }
+.confetti-container > div { position: absolute; top: 0; width: 10px; height: 20px; animation: confetti-fall linear infinite; }
+/* Individual confetti styles */
+.confetti-container div:nth-child(1) { left: 10%; animation-duration: 5s; background: #ee7752; }
+.confetti-container div:nth-child(2) { left: 20%; animation-duration: 4s; animation-delay: 1s; background: #e73c7e; }
+.confetti-container div:nth-child(3) { left: 30%; animation-duration: 6s; background: #23a6d5; }
+.confetti-container div:nth-child(4) { left: 40%; animation-duration: 3s; animation-delay: 2s; background: #23d5ab; }
+.confetti-container div:nth-child(5) { left: 50%; animation-duration: 5.5s; background: var(--primary-glow); }
+.confetti-container div:nth-child(6) { left: 60%; animation-duration: 4.5s; animation-delay: 0.5s; background: var(--secondary-glow); }
+/* ... and so on for all elements */
+
+/* --- [NEW] Underwater Caustics --- */
+@keyframes caustics-pan { from { background-position: 0% 0%; } to { background-position: 100% 100%; } }
+.caustics-layer {
+  position: absolute; inset: 0;
+  background-image: url('data:image/svg+xml')(
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+      <filter id="f" x="0" y="0" width="100%" height="100%">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="1" stitchTiles="stitch"/>
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="1" stitchTiles="stitch"/>
+        <feComposite operator="in" in2="SourceGraphic" result="map"/>
+        <feDisplacementMap in="SourceGraphic" in2="map" scale="50" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(%23f)"/>
+    </svg>
+  );
+  background-size: 150% 150%;
+  opacity: 0.1;
+}
+
+.caustics-layer:first-child { animation: caustics-pan 20s linear infinite alternate; }
+.caustics-layer:last-child { animation: caustics-pan 30s linear infinite alternate-reverse; }
+
+/* --- [NEW] Fireflies --- */
+@keyframes firefly-move { 0% { transform: translate(0, 0); opacity: 0; } 50% { opacity: 1; } 100% { transform: translate(var(--x), var(--y)); opacity: 0; } }
+/* This effect requires JS to set random positions and delays for each firefly div. */
+.firefly-container div { position: absolute; width: 5px; height: 5px; background: #ffff00; border-radius: 50%; box-shadow: 0 0 10px #ffff00; animation: firefly-move 10s ease-in-out infinite; }
+
+/* --- [NEW] Gentle Clouds --- */
+@keyframes move-clouds { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+.cloud-bg { position: absolute; inset: 0; background: #87ceeb; }
+.cloud { position: absolute; background: white; border-radius: 50%; opacity: 0.8; filter: blur(10px); }
+.c1 { width: 300px; height: 100px; top: 10%; animation: move-clouds 50s linear infinite; }
+.c2 { width: 400px; height: 150px; top: 30%; animation: move-clouds 80s linear infinite; animation-delay: -20s; }
+.c3 { width: 250px; height: 80px; top: 60%; animation: move-clouds 60s linear infinite; animation-delay: -10s; }
+
+/* --- [NEW] Metaballs --- */
+@keyframes move-metaball { 0% { transform: translate(0,0); } 25% { transform: translate(20vw, 30vh); } 50% { transform: translate(-10vw, 10vh); } 75% { transform: translate(15vw, -20vh); } 100% { transform: translate(0,0); } }
+.metaballs-container { position: absolute; inset: 0; filter: blur(20px) contrast(30); }
+.metaball { position: absolute; top: 50%; left: 50%; width: 100px; height: 100px; background: var(--primary-glow); border-radius: 50%; animation: move-metaball ease-in-out infinite; }
+.m1 { animation-duration: 15s; } .m2 { animation-duration: 20s; animation-direction: reverse; background: var(--secondary-glow); }
+.m3 { animation-duration: 18s; top: 20%; left: 20%; } .m4 { animation-duration: 12s; animation-direction: reverse; top: 80%; left: 80%; }
+
+/* --- [NEW] VHS Noise --- */
+@keyframes vhs-flicker-anim { 0% { opacity: 0.2; } 100% { opacity: 0.25; } }
+@keyframes vhs-scanline-anim { to { transform: translateY(100%); } }
+.vhs-scanlines { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 51%); background-size: 100% 4px; animation: vhs-scanline-anim 0.1s linear infinite; }
+.vhs-flicker { position: absolute; inset: 0; background: rgba(255,255,255,0.1); animation: vhs-flicker-anim 0.05s linear infinite alternate; }
+
+/* --- [NEW] Lighthouse Beam --- */
+@keyframes lighthouse-sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.lighthouse-container { position: absolute; inset: 0; overflow: hidden; }
+.lighthouse-beam-anim { position: absolute; top: 50%; left: 50%; width: 200%; height: 200%; transform-origin: top left; background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.3), transparent 20deg); animation: lighthouse-sweep 10s linear infinite; }

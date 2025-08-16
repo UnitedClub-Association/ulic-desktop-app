@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ULIC - Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @font-face {
+            font-family: 'Blanka';
+            src: local('Blanka'), url('path/to/blanka.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="container">
+        <div class="sidebar">
+            <h1 class="sidebar-title">ULIC</h1>
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="calendar.html" class="nav-link">Calendar</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <label for="theme-switch">Theme:</label>
+                <input type="checkbox" id="theme-switch" onclick="toggleTheme()">
+            </div>
+        </div>
+        <div class="content">
+            <h2 class="page-title">Projects</h2>
+            <p>Your projects will be displayed here.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

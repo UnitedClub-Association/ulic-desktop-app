@@ -1,0 +1,212 @@
+/* customization/customization-css/customization.css */
+
+/* --- Base Styles & Theme --- */
+:root {
+    /* Default Theme: Tokyo Night */
+    --bg-color: #1a1b26;
+    --bg-secondary: #16161e;
+    --card-bg: rgba(22, 22, 30, 0.7);
+    --border-color: rgba(72, 73, 89, 0.5);
+    --text-color: #a9b1d6;
+    --text-muted: #565f89;
+    --primary-glow: #7aa2f7;
+    --secondary-glow: #bb9af7;
+
+    /* Font Definitions */
+    --font-primary: 'Azonix', sans-serif;
+    --font-secondary: 'Molgan', sans-serif;
+    --font-body: 'Xeroda', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-body);
+    color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- Dynamic Background Container --- */
+/* This ensures our background container fills the screen */
+#dynamic-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+/* --- Animated Background Styles (for 'shapes' type) --- */
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* IMPORTANT: Select shapes inside the dynamic container */
+#dynamic-background-container .shape { 
+    position: absolute; 
+    border: 1px solid var(--border-color); 
+    background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0)); 
+    animation: spin linear infinite; 
+    opacity: 0.5; 
+}
+.shape1 { width: 30vw; height: 30vw; top: -10vh; left: -15vw; animation-duration: 40s; border-radius: 20px;}
+.shape2 { width: 20vw; height: 10vw; bottom: -5vh; right: -10vw; animation-duration: 30s; animation-direction: reverse; }
+.shape3 { width: 10vw; height: 10vw; top: 10vh; right: 20vw; animation-duration: 20s; border-radius: 5px;}
+.shape4 { width: 5vw; height: 15vw; top: 50vh; left: 15vw; animation-duration: 15s; }
+.shape5 { width: 8vw; height: 8vw; top: 20vh; left: 45vw; animation-duration: 25s; animation-direction: reverse; border-radius: 50px;}
+.shape6 { width: 4vw; height: 8vw; bottom: 15vh; left: 25vw; animation-duration: 12s; }
+.shape7 { width: 15vw; height: 15vw; top: 60vh; right: 15vw; animation-duration: 35s; border-radius: 10px;}
+.shape8 { width: 25vw; height: 5vw; bottom: 20vh; left: -10vw; animation-duration: 22s; }
+.shape9 { width: 2vw; height: 2vw; top: 5vh; left: 30vw; animation-duration: 10s; border-radius: 2px;}
+.shape10 { width: 18vw; height: 12vw; top: 70vh; left: 40vw; animation-duration: 45s; animation-direction: reverse; }
+.shape11 { width: 6vw; height: 6vw; bottom: 5vh; right: 45vw; animation-duration: 18s; border-radius: 10px;}
+.shape12 { width: 10vw; height: 2vw; top: 35vh; right: 5vw; animation-duration: 28s; }
+
+
+/* FIX: Added the missing keyframes for the gradient animation.
+  This is required by the 'synthwave-gradient' in backgrounds.js.
+*/
+@keyframes synthwave-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* --- Customization Layout --- */
+.customization-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: 100vh;
+}
+
+#customization-content {
+    padding: 2rem 3rem;
+    overflow-y: auto;
+}
+
+/* --- Customization Navbar --- */
+.customization-nav {
+    background: var(--card-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.nav-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+.nav-back-button:hover {
+    background-color: var(--primary-glow);
+    color: var(--bg-color);
+    border-color: var(--primary-glow);
+}
+
+.nav-category-title {
+    font-family: var(--font-primary); /* Corrected from --font-astro */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.nav-list { list-style: none; }
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.nav-link i { color: var(--primary-glow); width: 20px; text-align: center; }
+.nav-link:hover { background-color: var(--bg-secondary); }
+.nav-link.active {
+    background-color: var(--primary-glow);
+    color: var(--bg-color);
+    font-weight: bold;
+}
+.nav-link.active i { color: var(--bg-color); }
+
+/* --- General Content Styles --- */
+.page-header {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+.section-title:first-child { margin-top: 0; }
+
+/* Form & Input Styles */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { font-family: var(--font-secondary); color: var(--text-muted); margin-bottom: 0.5rem; }
+.form-group input, .form-group select, .form-group textarea {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+.form-actions { margin-top: 2rem; text-align: right; }
+.btn-primary {
+    display: inline-block; padding: 12px 25px; border-radius: 50px; text-decoration: none;
+    font-family: var(--font-primary); font-size: 1.1rem; border: 2px solid transparent;
+    transition: all 0.3s ease; background-color: var(--primary-glow); color: var(--bg-color);
+    box-shadow: 0 0 15px var(--primary-glow); cursor: pointer;
+}
+.btn-primary:hover { background-color: transparent; border-color: var(--primary-glow); color: var(--primary-glow); transform: translateY(-3px); }
+
+/* Theme & Background Grids */
+.theme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+.theme-button {
+    padding: 1rem; border: 1px solid var(--border-color); background-color: var(--bg-secondary);
+    color: var(--text-muted); border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+    font-family: var(--font-secondary); text-align: center;
+}
+.theme-button:hover { border-color: var(--primary-glow); color: var(--primary-glow); transform: translateY(-3px); }
+.theme-button.active {
+    border-color: var(--primary-glow); background-color: var(--primary-glow);
+    color: var(--bg-color); font-weight: bold; box-shadow: 0 0 10px var(--primary-glow);
+}

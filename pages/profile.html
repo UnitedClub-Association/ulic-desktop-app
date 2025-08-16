@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULIC - Profile</title>
+    
+    <!-- Icon Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- App Stylesheets -->
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/profile.css">
+
+    <link rel="icon" href="../assets/images/ulic-favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Animated Background Shapes -->
+    <div class="background-shapes">
+        <div class="shape shape1"></div><div class="shape shape2"></div><div class="shape shape3"></div>
+        <div class="shape shape4"></div><div class="shape shape5"></div><div class="shape shape6"></div>
+        <div class="shape shape7"></div><div class="shape shape8"></div><div class="shape shape9"></div>
+        <div class="shape shape10"></div><div class="shape shape11"></div><div class="shape shape12"></div>
+    </div>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="content">
+        <h1 class="page-title">User Profile</h1>
+
+        <div class="profile-card">
+            <div class="profile-picture-wrapper">
+                <img src="https://placehold.co/150x150/1a1b26/7aa2f7?text=User" alt="User Profile Picture" class="profile-picture" id="profilePicture">
+            </div>
+            <h2 class="profile-name" id="profileNameDisplay">User Name</h2>
+            <p class="profile-position" id="profilePositionDisplay">General Member</p>
+            <p class="profile-bio" id="profileBioDisplay">User bio will appear here.</p>
+            
+            <h3 class="profile-badges-title">Badges</h3>
+            <div class="profile-badges" id="profileBadges"></div>
+            
+            <div class="customization-link-wrapper">
+                <a href="../customization/index.html" class="btn-primary">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Customize Profile</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- App Scripts -->
+    <script src="../customization/customization-js/themes.js"></script> 
+    <script src="../customization/customization-js/theme-engine.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

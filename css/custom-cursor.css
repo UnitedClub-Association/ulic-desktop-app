@@ -1,0 +1,75 @@
+/* --- ULIC Custom Cursors - v2 - Updated for Neon Glow/Tech Theme --- */
+/* This version uses more specific selectors to prevent overrides. */
+/* Link this file LAST in your HTML <head> to ensure it has priority. */
+
+/* Set the default cursor on the highest-level elements */
+html {
+  cursor: url('../assets/custom-cursors/cursor-default.png'), default;
+  transition: filter 0.3s ease;
+}
+
+html:hover {
+  filter: drop-shadow(0 0 5px #8A2BE2);
+}
+
+/* Ensure all elements inherit the cursor from their parent by default */
+body, body * {
+  cursor: inherit;
+}
+
+/* Clickable elements (e.g., links, buttons) */
+a, button, [role="button"], label, select {
+  cursor: url('../assets/custom-cursors/cursor-pointer.png'), pointer;
+}
+
+/* Hover state for interactive elements */
+a:hover, button:hover, [role="button"]:hover, label:hover, select:hover {
+  cursor: url('../assets/custom-cursors/cursor-hover.png'), pointer;
+}
+
+/* Text input fields */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  cursor: url('../assets/custom-cursors/cursor-textinput.png'), text;
+}
+
+/* Loading state */
+.loading, .spinner, [aria-busy="true"] {
+  cursor: url('../assets/custom-cursors/cursor-loading.png'), wait;
+}
+
+/* Unavailable or disabled elements */
+[disabled], .unavailable {
+  cursor: url('../assets/custom-cursors/cursor-unavailable.png'), not-allowed;
+}
+
+/* Move/draggable elements */
+.draggable {
+  cursor: url('../assets/custom-cursors/cursor-move.png'), move;
+}
+
+/* Help elements */
+.help, [data-help] {
+  cursor: url('../assets/custom-cursors/cursor-help.png'), help;
+}
+
+/* Grab/grabbing states */
+.grabbable {
+  cursor: url('../assets/custom-cursors/cursor-grab.png'), grab;
+}
+.grabbable:active {
+  cursor: url('../assets/custom-cursors/cursor-grabbing.png'), grabbing;
+}
+
+/* Resize cursors */
+.resize-e { cursor: url('../assets/custom-cursors/cursor-eresize.png'), e-resize; }
+.resize-n { cursor: url('../assets/custom-cursors/cursor-nresize.png'), n-resize; }
+.resize-ne { cursor: url('../assets/custom-cursors/cursor-neresize.png'), ne-resize; }
+.resize-nw { cursor: url('../assets/custom-cursors/cursor-nwresize.png'), nw-resize; }
+.resize-s { cursor: url('../assets/custom-cursors/cursor-sresize.png'), s-resize; }
+.resize-se { cursor: url('../assets/custom-cursors/cursor-seresize.png'), se-resize; }
+.resize-sw { cursor: url('../assets/custom-cursors/cursor-swresize.png'), sw-resize; }
+.resize-w { cursor: url('../assets/custom-cursors/cursor-wresize.png'), w-resize; }
+
+/* Zoom cursors */
+.zoom-in { cursor: url('../assets/custom-cursors/cursor-zoomin.png'), zoom-in; }
+.zoom-out { cursor: url('../assets/custom-cursors/cursor-zoomout.png'), zoom-out; }

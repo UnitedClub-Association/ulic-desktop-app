@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULIC - Customization</title>
+    
+    <!-- Icon Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- App Stylesheets -->
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="customization-css/customization.css">
+    <link rel="stylesheet" href="customization-css/backgrounds.css">
+
+    <link rel="icon" href="../assets/images/ulic-favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- 
+      FIX: Replaced the hardcoded 'background-shapes' div.
+      This is now the empty container where the BackgroundEngine will inject the selected background.
+      The ID 'dynamic-background-container' MUST match the 'containerId' in background-engine.js.
+    -->
+    <div id="dynamic-background-container"></div>
+
+    <div class="customization-layout">
+        <div id="customization-navbar-placeholder"></div>
+        <main id="customization-content"></main>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- App Scripts -->
+    <!-- These scripts are now correctly ordered and sourced -->
+    <script src="customization-js/themes.js"></script>
+    <script src="customization-js/theme-engine.js"></script>
+    <script src="customization-js/backgrounds.js"></script>
+    <script src="customization-js/background-engine.js"></script>
+    <script src="customization-js/cursor.js"></script>
+    <script src="customization-js/customization.js"></script>
+</body>
+</html>
