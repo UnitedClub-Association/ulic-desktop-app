@@ -1,37 +1,12 @@
 {
-       "name": "ulic-desktop-app",
-       "version": "1.0.0",
-       "description": "ULIC Desktop App for managing club activities, built with Electron",
-       "main": "main.js",
-       "scripts": {
-              "start": "electron .",
-              "build": "electron-builder --config electron-builder.yml",
-              "test": "echo \"Error: no test specified\" && exit 1",
-              "dist": "electron-builder"
-       },
-       "repository": {
-              "type": "git",
-              "url": "git+https://github.com/UnitedClub-Association/ulic-desktop-app.git"
-       },
-       "keywords": [
-              "ulic",
-              "electron",
-              "desktop",
-              "club"
-       ],
-       "author": "UnitedClub-Association",
-       "license": "ISC",
-       "bugs": {
-              "url": "https://github.com/UnitedClub-Association/ulic-desktop-app/issues"
-       },
-       "homepage": "https://github.com/UnitedClub-Association/ulic-desktop-app#readme",
-       "dependencies": {
-              "@supabase/supabase-js": "^2.45.0",
-              "electron-updater": "^6.6.2"
-       },
-       "devDependencies": {
-              "@electron/notarize": "^1.2.2",
-              "electron": "^36.0.0",
-              "electron-builder": "^24.13.3"
-       }
+  "name": "ulic-desktop-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.5"
+  }
 }
